@@ -1,0 +1,17 @@
+name: Account Schedule Smoke Test
+
+"on":
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print account schedule smoke test
+        run: |
+          echo "Account schedule smoke test executed"
+          echo "Repository: $GITHUB_REPOSITORY"
+          echo "Event: $GITHUB_EVENT_NAME"
+          date -u
